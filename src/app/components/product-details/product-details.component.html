@@ -1,0 +1,143 @@
+<section class="product-details-page">
+
+    <!-- Back -->
+
+    <button class="back-button" (click)="goBack()">
+
+        ← Back to Collection
+
+    </button>
+
+
+    <!-- Loading -->
+
+    <div *ngIf="loading" class="loading">
+
+        Loading saree details...
+
+    </div>
+
+
+    <!-- Error -->
+
+    <div *ngIf="!loading && errorMessage" class="error-message">
+
+        {{ errorMessage }}
+
+    </div>
+
+
+    <!-- Product -->
+
+    <div *ngIf="!loading && product" class="product-container">
+
+
+        <!-- Product Image -->
+
+        <div class="product-image-section">
+
+            <div class="product-image">
+
+                🥻
+
+            </div>
+
+        </div>
+
+
+        <!-- Product Information -->
+
+        <div class="product-info">
+
+            <p class="category">
+                {{ product.category }}
+            </p>
+
+
+            <h1>
+                {{ product.name }}
+            </h1>
+
+
+            <p class="description">
+
+                {{ product.description }}
+
+            </p>
+
+
+            <!-- Product Information -->
+
+            <div class="product-meta">
+
+                <div>
+
+                    <span>
+                        Colour
+                    </span>
+
+                    <strong>
+                        {{ product.color }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong>
+                        {{ product.category }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="price-section">
+
+                <span class="original-price">
+
+                    ₹{{ product.price | number }}
+
+                </span>
+
+                <span class="selling-price">
+
+                    ₹{{ product.sellingPrice | number }}
+
+                </span>
+
+            </div>
+
+
+            <!-- Discount -->
+
+            <div *ngIf="product.price > product.sellingPrice" class="discount">
+
+                Save
+                ₹{{ product.price - product.sellingPrice | number }}
+
+            </div>
+
+
+            <!-- Action -->
+
+            <button class="view-button" (click)="viewProduct(product.id)">
+
+                View Details
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>

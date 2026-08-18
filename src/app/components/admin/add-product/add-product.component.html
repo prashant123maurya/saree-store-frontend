@@ -1,0 +1,301 @@
+<div class="add-product-page">
+
+  <!-- Header -->
+
+  <header class="admin-header">
+
+    <div class="admin-logo">
+
+      <span class="logo-icon">🪷</span>
+
+      <div>
+
+        <h2>Saree Store</h2>
+
+        <span>
+          Admin Panel
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="back-button"
+      type="button"
+      (click)="cancel()">
+
+      ← Back to Dashboard
+
+    </button>
+
+  </header>
+
+
+  <!-- Content -->
+
+  <main class="form-container">
+
+    <div class="page-heading">
+
+      <p class="subtitle">
+        PRODUCT MANAGEMENT
+      </p>
+
+      <h1>
+        Add New Saree
+      </h1>
+
+      <p>
+        Add a new saree to your store collection.
+      </p>
+
+    </div>
+
+
+    <!-- Form -->
+
+    <form
+      #productForm="ngForm"
+      (ngSubmit)="saveProduct(productForm)"
+      class="product-form">
+
+
+      <!-- Name -->
+
+      <div class="form-group">
+
+        <label>
+          Saree Name
+          <span>*</span>
+        </label>
+
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="product.name"
+          #name="ngModel"
+          placeholder="e.g. Banarasi Silk Saree"
+          required
+        />
+
+        <small
+          *ngIf="name.invalid && name.touched">
+
+          Product name is required.
+
+        </small>
+
+      </div>
+
+
+      <!-- Category -->
+
+      <div class="form-group">
+
+        <label>
+          Category
+          <span>*</span>
+        </label>
+
+        <input
+          type="text"
+          name="category"
+          [(ngModel)]="product.category"
+          #category="ngModel"
+          placeholder="e.g. Banarasi"
+          required
+        />
+
+        <small
+          *ngIf="category.invalid && category.touched">
+
+          Category is required.
+
+        </small>
+
+      </div>
+
+
+      <!-- Colour -->
+
+      <div class="form-group">
+
+        <label>
+          Colour
+          <span>*</span>
+        </label>
+
+        <input
+          type="text"
+          name="color"
+          [(ngModel)]="product.color"
+          #color="ngModel"
+          placeholder="e.g. Red · Gold"
+          required
+        />
+
+        <small
+          *ngIf="color.invalid && color.touched">
+
+          Colour is required.
+
+        </small>
+
+      </div>
+
+
+      <!-- Price Row -->
+
+      <div class="form-row">
+
+
+        <!-- Original Price -->
+
+        <div class="form-group">
+
+          <label>
+            Original Price
+            <span>*</span>
+          </label>
+
+          <div class="price-input">
+
+            <span>₹</span>
+
+            <input
+              type="number"
+              name="price"
+              [(ngModel)]="product.price"
+              #price="ngModel"
+              placeholder="4999"
+              min="1"
+              required
+            />
+
+          </div>
+
+          <small
+            *ngIf="price.invalid && price.touched">
+
+            Enter a valid price.
+
+          </small>
+
+        </div>
+
+
+        <!-- Selling Price -->
+
+        <div class="form-group">
+
+          <label>
+            Selling Price
+            <span>*</span>
+          </label>
+
+          <div class="price-input">
+
+            <span>₹</span>
+
+            <input
+              type="number"
+              name="sellingPrice"
+              [(ngModel)]="product.sellingPrice"
+              #sellingPrice="ngModel"
+              placeholder="3999"
+              min="1"
+              required
+            />
+
+          </div>
+
+          <small
+            *ngIf="
+              sellingPrice.invalid &&
+              sellingPrice.touched
+            ">
+
+            Enter a valid selling price.
+
+          </small>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- Description -->
+
+      <div class="form-group">
+
+        <label>
+          Description
+        </label>
+
+        <textarea
+          name="description"
+          [(ngModel)]="product.description"
+          rows="5"
+          placeholder="Describe the saree, fabric, design, occasion etc.">
+        </textarea>
+
+      </div>
+
+
+      <!-- Messages -->
+
+      <div
+        class="success-message"
+        *ngIf="successMessage">
+
+        {{ successMessage }}
+
+      </div>
+
+
+      <div
+        class="error-message"
+        *ngIf="errorMessage">
+
+        {{ errorMessage }}
+
+      </div>
+
+
+      <!-- Buttons -->
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="cancel-button"
+          (click)="cancel()">
+
+          Cancel
+
+        </button>
+
+
+        <button
+          type="submit"
+          class="save-button"
+          [disabled]="isSubmitting">
+
+          {{ isSubmitting
+              ? 'Saving...'
+              : 'Save Saree'
+          }}
+
+        </button>
+
+      </div>
+
+
+    </form>
+
+  </main>
+
+</div>

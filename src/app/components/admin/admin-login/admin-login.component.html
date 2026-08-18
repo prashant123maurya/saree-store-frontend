@@ -1,0 +1,94 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="login-header">
+
+      <div class="logo-icon">
+        🪷
+      </div>
+
+      <h1>Saree Store</h1>
+
+      <p>Admin Portal</p>
+
+    </div>
+
+
+    <form (ngSubmit)="login()">
+
+      <!-- Email -->
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter admin email"
+          required
+        />
+
+      </div>
+
+
+      <!-- Password -->
+
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          required
+        />
+
+      </div>
+
+
+      <!-- Error -->
+
+      <p
+        class="error-message"
+        *ngIf="errorMessage">
+
+        {{ errorMessage }}
+
+      </p>
+
+
+      <!-- Login -->
+
+      <button
+        type="submit"
+        class="login-button">
+
+        Login
+
+      </button>
+
+    </form>
+
+
+    <a
+      routerLink="/"
+      class="back-link">
+
+      ← Back to Store
+
+    </a>
+
+  </div>
+
+</div>

@@ -1,0 +1,174 @@
+.featured-section {
+  padding: 90px 80px;
+  background-color: #ffffff;
+}
+
+/* Heading */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  margin-bottom: 10px;
+
+  color: #9b4b5c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #6b2737;
+
+  font-family: Georgia, serif;
+  font-size: 40px;
+}
+
+.section-description {
+  margin-top: 15px;
+
+  color: #746565;
+
+  font-size: 16px;
+}
+
+/* Product Grid */
+
+.product-grid {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+/* Product Card */
+
+.product-card {
+  background: #fffaf5;
+
+  border: 1px solid #eee2d5;
+
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 12px 30px rgba(80, 40, 40, 0.12);
+}
+
+/* Product Image */
+
+.product-image {
+  height: 330px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ead9cd;
+
+  color: #8b6b62;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+}
+
+/* Product Information */
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  margin: 0;
+
+  color: #4c3030;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+}
+
+.product-color {
+  margin: 8px 0;
+
+  color: #8a7777;
+
+  font-size: 14px;
+}
+
+.product-price {
+  margin: 12px 0;
+
+  color: #6b2737;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+/* Button */
+
+.product-info button {
+  width: 100%;
+
+  padding: 11px;
+
+  border: 1px solid #6b2737;
+
+  background: transparent;
+
+  color: #6b2737;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.product-info button:hover {
+  background-color: #6b2737;
+
+  color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .featured-section {
+    padding: 60px 25px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+  }
+}

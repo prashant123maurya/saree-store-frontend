@@ -1,0 +1,229 @@
+<div class="admin-page">
+
+  <!-- Header -->
+
+  <header class="admin-header">
+
+    <div class="admin-logo">
+
+      <span class="logo-icon">🪷</span>
+
+      <div>
+        <h2>Saree Store</h2>
+        <span>Admin Panel</span>
+      </div>
+
+    </div>
+
+
+    <button
+      class="logout-button"
+      (click)="logout()">
+
+      Logout
+
+    </button>
+
+  </header>
+
+
+  <!-- Main -->
+
+  <main class="admin-content">
+
+    <div class="page-heading">
+
+      <div>
+        <p class="subtitle">
+          ADMINISTRATION
+        </p>
+
+        <h1>
+          Dashboard
+        </h1>
+
+        <p>
+          Manage your saree collection.
+        </p>
+      </div>
+
+
+      <button
+        class="add-button"
+        (click)="addProduct()">
+
+        + Add Saree
+
+      </button>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🥻
+        </div>
+
+        <div>
+          <p>Total Sarees</p>
+
+          <h2>
+            {{ products.length }}
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🏷️
+        </div>
+
+        <div>
+          <p>Categories</p>
+
+          <h2>
+            {{ categoriesCount }}
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          💰
+        </div>
+
+        <div>
+          <p>Average Price</p>
+
+          <h2>
+            ₹{{ averagePrice | number }}
+          </h2>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <section class="products-section">
+
+      <div class="section-heading">
+
+        <div>
+          <h2>
+            Saree Collection
+          </h2>
+
+          <p>
+            Manage all sarees in your store.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Saree</th>
+              <th>Category</th>
+              <th>Colour</th>
+              <th>Price</th>
+              <th>Selling Price</th>
+              <th>Actions</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="let product of products">
+
+              <td class="product-name">
+                {{ product.name }}
+              </td>
+
+              <td>
+                {{ product.category }}
+              </td>
+
+              <td>
+                {{ product.color }}
+              </td>
+
+              <td>
+                ₹{{ product.price | number }}
+              </td>
+
+              <td class="selling-price">
+                ₹{{ product.sellingPrice | number }}
+              </td>
+
+              <td class="actions">
+
+                <button
+                  class="edit-button"
+                  (click)="editProduct(product.id)">
+
+                  Edit
+
+                </button>
+
+                <button
+                  class="delete-button"
+                  (click)="deleteProduct(product.id)">
+
+                  Delete
+
+                </button>
+
+              </td>
+
+            </tr>
+
+
+            <tr
+              *ngIf="products.length === 0">
+
+              <td
+                colspan="6"
+                class="no-products">
+
+                No sarees available.
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

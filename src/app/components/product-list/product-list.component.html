@@ -1,0 +1,172 @@
+<section class="collection-section">
+
+    <!-- Heading -->
+
+    <div class="collection-header">
+
+        <p class="section-subtitle">
+            OUR COLLECTION
+        </p>
+
+        <h1>
+            Saree Collection
+        </h1>
+
+        <p>
+            Explore our beautiful collection of traditional and
+            contemporary sarees.
+        </p>
+
+    </div>
+
+
+    <!-- Filters -->
+
+    <div class="filter-container">
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Search sarees..." [(ngModel)]="searchTerm" (input)="applyFilters()" />
+
+        </div>
+
+
+        <div class="category-filter">
+
+            <select [(ngModel)]="selectedCategory" (change)="applyFilters()">
+
+                <option *ngFor="let category of categories" [value]="category">
+
+                    {{ category }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Product Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Saree Name</th>
+                    <th>Category</th>
+                    <th>Colour</th>
+                    <th>Price</th>
+                    <th>Selling Price</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr *ngFor="let product of paginatedProducts">
+
+                    <td class="product-name">
+                        {{ product.name }}
+                    </td>
+
+                    <td>
+                        {{ product.category }}
+                    </td>
+
+                    <td>
+                        {{ product.color }}
+                    </td>
+
+                    <td>
+                        ₹{{ product.price | number }}
+                    </td>
+
+                    <td class="selling-price">
+                        ₹{{ product.sellingPrice | number }}
+                    </td>
+
+                    <td>
+
+                        <button type="button" class="view-button" (click)="viewProduct(product.id)">
+
+                            View Details
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Empty state -->
+
+                <tr *ngIf="paginatedProducts.length === 0">
+
+                    <td colspan="6" class="no-products">
+
+                        No sarees found.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Pagination -->
+
+    <div class="pagination-container" *ngIf="filteredProducts.length > 0">
+
+        <div class="pagination-info">
+
+            Showing
+            {{ (currentPage - 1) * pageSize + 1 }}
+            -
+            {{ endIndex }}
+            of
+            {{ filteredProducts.length }}
+            products
+
+        </div>
+
+
+        <div class="pagination-buttons">
+
+            <button (click)="previousPage()" [disabled]="currentPage === 1">
+
+                ← Previous
+
+            </button>
+
+
+            <button *ngFor="let page of pages" [class.active]="currentPage === page" (click)="goToPage(page)">
+
+                {{ page }}
+
+            </button>
+
+
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+
+                Next →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,215 @@
+<div class="edit-page">
+
+  <div class="edit-card">
+
+    <!-- Header -->
+
+    <div class="page-header">
+
+      <div>
+
+        <p class="subtitle">
+          ADMINISTRATION
+        </p>
+
+        <h1>
+          Edit Saree
+        </h1>
+
+        <p>
+          Update saree information.
+        </p>
+
+      </div>
+
+      <button
+        type="button"
+        class="back-button"
+        (click)="cancel()">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+
+    <!-- Loading -->
+
+    <div
+      *ngIf="loading"
+      class="loading">
+
+      Loading saree details...
+
+    </div>
+
+
+    <!-- Form -->
+
+    <form
+      *ngIf="!loading"
+      (ngSubmit)="updateProduct()">
+
+
+      <!-- Name -->
+
+      <div class="form-group">
+
+        <label>
+          Saree Name
+        </label>
+
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="product.name"
+          required
+        />
+
+      </div>
+
+
+      <!-- Description -->
+
+      <div class="form-group">
+
+        <label>
+          Description
+        </label>
+
+        <textarea
+          name="description"
+          [(ngModel)]="product.description"
+          rows="4">
+        </textarea>
+
+      </div>
+
+
+      <!-- Category -->
+
+      <div class="form-group">
+
+        <label>
+          Category
+        </label>
+
+        <input
+          type="text"
+          name="category"
+          [(ngModel)]="product.category"
+          required
+        />
+
+      </div>
+
+
+      <!-- Colour -->
+
+      <div class="form-group">
+
+        <label>
+          Colour
+        </label>
+
+        <input
+          type="text"
+          name="color"
+          [(ngModel)]="product.color"
+          required
+        />
+
+      </div>
+
+
+      <!-- Price -->
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>
+            Price
+          </label>
+
+          <input
+            type="number"
+            name="price"
+            [(ngModel)]="product.price"
+            min="1"
+            required
+          />
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Selling Price
+          </label>
+
+          <input
+            type="number"
+            name="sellingPrice"
+            [(ngModel)]="product.sellingPrice"
+            min="1"
+            required
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- Error -->
+
+      <p
+        *ngIf="errorMessage"
+        class="error-message">
+
+        {{ errorMessage }}
+
+      </p>
+
+
+      <!-- Success -->
+
+      <p
+        *ngIf="successMessage"
+        class="success-message">
+
+        {{ successMessage }}
+
+      </p>
+
+
+      <!-- Buttons -->
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="cancel-button"
+          (click)="cancel()">
+
+          Cancel
+
+        </button>
+
+        <button
+          type="submit"
+          class="save-button">
+
+          Update Saree
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

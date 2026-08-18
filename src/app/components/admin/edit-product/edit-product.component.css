@@ -1,0 +1,102 @@
+.edit-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f8f5f2;
+}
+
+.edit-card {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 5px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button,
+.cancel-button {
+  background: #eee;
+}
+
+.save-button {
+  background: #7b4f2c;
+  color: white;
+}
+
+.error-message {
+  color: #c0392b;
+  margin-top: 15px;
+}
+
+.success-message {
+  color: #278a4b;
+  margin-top: 15px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+}

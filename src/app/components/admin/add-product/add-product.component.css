@@ -1,0 +1,369 @@
+.add-product-page {
+  min-height: 100vh;
+  background: #faf6f2;
+}
+
+
+/* Header */
+
+.admin-header {
+  height: 75px;
+
+  padding: 0 60px;
+
+  background: white;
+
+  border-bottom: 1px solid #eee2d5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.admin-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.logo-icon {
+  font-size: 30px;
+}
+
+
+.admin-logo h2 {
+  margin: 0;
+
+  color: #6b2737;
+
+  font-family: Georgia, serif;
+}
+
+
+.admin-logo span:not(.logo-icon) {
+  color: #8a7777;
+
+  font-size: 12px;
+}
+
+
+.back-button {
+  padding: 9px 18px;
+
+  border: 1px solid #6b2737;
+
+  background: transparent;
+
+  color: #6b2737;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+.back-button:hover {
+  background: #6b2737;
+
+  color: white;
+}
+
+
+/* Content */
+
+.form-container {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 50px 30px;
+}
+
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+
+.subtitle {
+  margin: 0 0 8px;
+
+  color: #9b4b5c;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.page-heading h1 {
+  margin: 0;
+
+  color: #6b2737;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+}
+
+
+.page-heading p:last-child {
+  color: #8a7777;
+}
+
+
+/* Form */
+
+.product-form {
+  padding: 35px;
+
+  background: white;
+
+  border: 1px solid #eee2d5;
+
+  box-shadow:
+    0 10px 30px rgba(80, 40, 40, 0.06);
+}
+
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #4c3030;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.form-group label span {
+  color: #b42318;
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dfd0c6;
+
+  background: #fffaf5;
+
+  color: #4c3030;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: border 0.3s ease;
+}
+
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #9b4b5c;
+
+  background: white;
+}
+
+
+.form-group small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #b42318;
+
+  font-size: 12px;
+}
+
+
+/* Price */
+
+.price-input {
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #dfd0c6;
+
+  background: #fffaf5;
+}
+
+
+.price-input span {
+  padding-left: 14px;
+
+  color: #6b2737;
+
+  font-weight: 600;
+}
+
+
+.price-input input {
+  border: none;
+
+  background: transparent;
+}
+
+
+.price-input:focus-within {
+  border-color: #9b4b5c;
+}
+
+
+/* Messages */
+
+.success-message {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  background: #eef8f0;
+
+  border: 1px solid #c7e5cd;
+
+  color: #26733a;
+
+  font-size: 14px;
+}
+
+
+.error-message {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  background: #fff1f0;
+
+  border: 1px solid #f0c4c0;
+
+  color: #b42318;
+
+  font-size: 14px;
+}
+
+
+/* Actions */
+
+.form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #eee2d5;
+}
+
+
+.cancel-button,
+.save-button {
+  padding: 12px 25px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+
+.cancel-button {
+  border: 1px solid #b9aaa1;
+
+  background: white;
+
+  color: #6b5b55;
+}
+
+
+.cancel-button:hover {
+  background: #f5efea;
+}
+
+
+.save-button {
+  border: 1px solid #6b2737;
+
+  background: #6b2737;
+
+  color: white;
+}
+
+
+.save-button:hover {
+  background: #551d2c;
+}
+
+
+.save-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+  .admin-header {
+    padding: 0 20px;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .product-form {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+}

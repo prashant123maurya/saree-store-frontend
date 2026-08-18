@@ -1,0 +1,45 @@
+<section class="featured-section">
+
+    <div class="section-heading">
+        <p class="section-subtitle">OUR COLLECTION</p>
+
+        <h2>Featured Sarees</h2>
+
+        <p class="section-description">
+            Explore our carefully selected collection of elegant sarees.
+        </p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card" *ngFor="let product of featuredProducts">
+
+            <div class="product-image">
+                <span>{{ product.category }}</span>
+            </div>
+
+            <div class="product-info">
+
+                <h3>{{ product.name }}</h3>
+
+                <p class="product-color">
+                    {{ product.color }}
+                </p>
+
+                <p class="product-price">
+                    ₹{{ product.price | number }}
+                </p>
+
+                <button class="view-button" (click)="viewProduct(product.id)">
+
+                    View Details
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
