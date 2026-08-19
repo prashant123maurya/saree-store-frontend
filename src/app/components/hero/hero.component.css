@@ -10,7 +10,10 @@
   background: #fffaf5;
 }
 
-/* Left side */
+
+/* =========================
+   Left Side
+   ========================= */
 
 .hero-content {
   max-width: 560px;
@@ -49,7 +52,10 @@
   line-height: 1.7;
 }
 
-/* Button */
+
+/* =========================
+   Button
+   ========================= */
 
 .hero-button {
   margin-top: 25px;
@@ -75,7 +81,10 @@
   transform: translateY(-2px);
 }
 
-/* Right side */
+
+/* =========================
+   Right Side - Saree Image
+   ========================= */
 
 .hero-image {
   width: 430px;
@@ -88,16 +97,24 @@
   background: #ead9cd;
 
   border-radius: 220px 220px 20px 20px;
+
+  overflow: hidden;
 }
 
-.image-placeholder {
-  color: #8b6b62;
+.hero-image img {
+  width: 100%;
+  height: 100%;
 
-  font-family: Georgia, serif;
-  font-size: 22px;
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
 }
 
-/* Responsive */
+
+/* =========================
+   Responsive
+   ========================= */
 
 @media (max-width: 900px) {
 
@@ -126,5 +143,32 @@
 
     width: 330px;
     height: 400px;
+  }
+}
+
+
+/* =========================
+   Small Mobile Screens
+   ========================= */
+
+@media (max-width: 500px) {
+
+  .hero {
+    padding: 45px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 280px;
+    height: 360px;
+
+    border-radius: 150px 150px 20px 20px;
   }
 }
