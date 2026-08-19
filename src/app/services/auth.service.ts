@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8080/auth';
+  private apiUrl =
+    'https://saree-store-backend-fzkj.onrender.com/auth';
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<string> {
+  login(
+    email: string,
+    password: string
+  ): Observable<string> {
 
     return this.http.post(
       `${this.apiUrl}/login`,
@@ -40,14 +44,12 @@ export class AuthService {
 
   isAuthenticated(): Observable<string> {
 
-  return this.http.get(
-    `${this.apiUrl}/me`,
-    {
-      responseType: 'text',
-      withCredentials: true
-    }
-  );
-}
-
-
+    return this.http.get(
+      `${this.apiUrl}/me`,
+      {
+        responseType: 'text',
+        withCredentials: true
+      }
+    );
+  }
 }
